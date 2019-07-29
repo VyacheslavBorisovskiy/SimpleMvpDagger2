@@ -13,5 +13,5 @@ public interface AppModule {
     MainActivity contributesMainActivityInjector();
 
     @ContributesAndroidInjector(modules = {PresenterModule.class})
-    MyFragment contributesMyFragmentActivityInjector();
+    MyFragment contributesPresenterInjector();
 }

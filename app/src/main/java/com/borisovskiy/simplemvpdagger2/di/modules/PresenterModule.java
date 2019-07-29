@@ -9,7 +9,7 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class PresenterModule {
+public abstract class PresenterModule {
 
     @Provides
     public static IPresenter getPresenter(MyFragment fragment, Model model) {
