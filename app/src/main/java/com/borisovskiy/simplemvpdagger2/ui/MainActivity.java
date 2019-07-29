@@ -2,20 +2,37 @@ package com.borisovskiy.simplemvpdagger2.ui;
 
 import android.os.Bundle;
 
+import androidx.fragment.app.Fragment;
+
 import com.borisovskiy.simplemvpdagger2.R;
 import com.borisovskiy.simplemvpdagger2.base.BaseActivity;
 
-public class MainActivity extends BaseActivity {
+import javax.inject.Inject;
+
+import dagger.android.AndroidInjection;
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.support.HasSupportFragmentInjector;
+
+public class MainActivity extends BaseActivity implements HasSupportFragmentInjector {
+    @Inject
+    DispatchingAndroidInjector<Fragment> fragmentInjector;
+    @Inject
+    MyFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.container, new MyFragment())
+                .add(R.id.container, fragment)
                 .commit();
+    }
 
+    @Override
+    public AndroidInjector<Fragment> supportFragmentInjector() {
+        return fragmentInjector;
     }
 }

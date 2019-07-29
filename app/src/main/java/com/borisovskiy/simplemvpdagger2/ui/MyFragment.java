@@ -12,28 +12,32 @@ import androidx.annotation.Nullable;
 import com.borisovskiy.simplemvpdagger2.R;
 import com.borisovskiy.simplemvpdagger2.base.BaseFragment;
 import com.borisovskiy.simplemvpdagger2.mvp.Contract;
-import com.borisovskiy.simplemvpdagger2.mvp.Model;
-import com.borisovskiy.simplemvpdagger2.mvp.Presenter;
+import com.borisovskiy.simplemvpdagger2.mvp.Contract.IPresenter;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import dagger.android.support.AndroidSupportInjection;
 
 public class MyFragment extends BaseFragment implements Contract.IView {
 
     @BindView(R.id.textview)
     TextView textView;
+    @Inject
+    IPresenter presenter;
     private Unbinder unbinder;
-    private Presenter presenter;
 
     public MyFragment() {
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        AndroidSupportInjection.inject(this);
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
-        presenter = new Presenter(this, new Model());
+//        presenter = new Presenter(this, new Model());
     }
 
     @Override
