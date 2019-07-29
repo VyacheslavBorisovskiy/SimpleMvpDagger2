@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">SimpleMvpDagger2</string>
+    <string name="app_name">mvp-dagger-Android-example</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="text_view_content">fragment</string>
 </resources>
