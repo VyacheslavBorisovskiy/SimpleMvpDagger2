@@ -19,7 +19,6 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import dagger.android.support.AndroidSupportInjection;
 
 public class MyFragment extends BaseFragment implements Contract.IView {
 
@@ -34,7 +33,6 @@ public class MyFragment extends BaseFragment implements Contract.IView {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        AndroidSupportInjection.inject(this);
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
 //        presenter = new Presenter(this, new Model());
