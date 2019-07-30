@@ -7,8 +7,6 @@ import com.borisovskiy.simplemvpdagger2.base.BaseActivity;
 
 import javax.inject.Inject;
 
-import dagger.android.AndroidInjection;
-
 public class MainActivity extends BaseActivity {
 
     @Inject
@@ -16,7 +14,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
