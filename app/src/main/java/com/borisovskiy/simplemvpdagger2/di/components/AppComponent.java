@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.borisovskiy.simplemvpdagger2.base.App;
 import com.borisovskiy.simplemvpdagger2.di.modules.AppModule;
+import com.borisovskiy.simplemvpdagger2.di.modules.RetrofitModule;
 
 import javax.inject.Singleton;
 
@@ -14,7 +15,7 @@ import dagger.android.DaggerApplication;
 import dagger.android.support.AndroidSupportInjectionModule;
 
 @Singleton
-@Component(modules = {AndroidSupportInjectionModule.class, AppModule.class})
+@Component(modules = {AndroidSupportInjectionModule.class, AppModule.class, RetrofitModule.class})
 public interface AppComponent extends AndroidInjector<DaggerApplication> {
 
     void inject(App app);

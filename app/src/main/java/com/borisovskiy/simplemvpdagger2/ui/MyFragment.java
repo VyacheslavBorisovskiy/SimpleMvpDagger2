@@ -19,9 +19,6 @@ import com.borisovskiy.simplemvpdagger2.mvp.Contract;
 import com.borisovskiy.simplemvpdagger2.mvp.Contract.IPresenter;
 import com.borisovskiy.simplemvpdagger2.retrofit.ApiBbc;
 import com.borisovskiy.simplemvpdagger2.retrofit.PojoNews;
-import com.borisovskiy.simplemvpdagger2.retrofit.RetrofitClient;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import javax.inject.Inject;
 
@@ -31,12 +28,11 @@ import butterknife.Unbinder;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class MyFragment extends BaseFragment implements Contract.IView {
-
+    @Inject
     ApiBbc apiBbc;
-    Retrofit retrofit;
+    //    Retrofit retrofit;
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
     RecyclerViewAdapter recyclerViewAdapter;
@@ -67,12 +63,12 @@ public class MyFragment extends BaseFragment implements Contract.IView {
         recyclerViewAdapter = new RecyclerViewAdapter(getContext());
         recyclerView.setAdapter(recyclerViewAdapter);
 
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
+//        Gson gson = new GsonBuilder()
+//                .setLenient()
+//                .create();
 
-        retrofit = RetrofitClient.callRetrofit();
-        apiBbc = retrofit.create(ApiBbc.class);
+//        retrofit = RetrofitClient.callRetrofit();
+//        apiBbc = retrofit.create(ApiBbc.class);
 
 
         apiBbc.getBbcData("bbc-news", "1ab09308782244538982ed1870f37d82").enqueue(new Callback<PojoNews>() {
@@ -86,6 +82,8 @@ public class MyFragment extends BaseFragment implements Contract.IView {
                 handleError(t);
             }
         });
+
+//        handleResults(presenter.getPojoNews());
 
         return view;
     }
@@ -114,6 +112,18 @@ public class MyFragment extends BaseFragment implements Contract.IView {
     public void setData(String string) {
         textView.setText(string);
     }
+
+    @Override
+    public void setData(PojoNews pojoNews) {
+        if (pojoNews != null) {
+            recyclerViewAdapter.setData(pojoNews);
+            System.out.println(pojoNews + " _____________________________________________________________");
+
+        } else {
+            Toast.makeText(getContext(), "NO RESULTS FOUND", Toast.LENGTH_LONG).show();
+        }
+    }
+
 
     @Override
     public void onStop() {
