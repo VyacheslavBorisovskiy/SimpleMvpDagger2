@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.borisovskiy.simplemvpdagger2.R;
-import com.borisovskiy.simplemvpdagger2.adapters.RecyclerViewAdapter;
 import com.borisovskiy.simplemvpdagger2.base.BaseFragment;
 import com.borisovskiy.simplemvpdagger2.mvp.Contract;
 import com.borisovskiy.simplemvpdagger2.mvp.Contract.IPresenter;
