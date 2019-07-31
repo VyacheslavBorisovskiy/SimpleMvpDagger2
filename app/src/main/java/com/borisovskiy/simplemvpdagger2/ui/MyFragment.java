@@ -17,7 +17,6 @@ import com.borisovskiy.simplemvpdagger2.adapters.RecyclerViewAdapter;
 import com.borisovskiy.simplemvpdagger2.base.BaseFragment;
 import com.borisovskiy.simplemvpdagger2.mvp.Contract;
 import com.borisovskiy.simplemvpdagger2.mvp.Contract.IPresenter;
-import com.borisovskiy.simplemvpdagger2.retrofit.ApiBbc;
 import com.borisovskiy.simplemvpdagger2.retrofit.PojoNews;
 
 import javax.inject.Inject;
@@ -25,12 +24,9 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MyFragment extends BaseFragment implements Contract.IView {
-//    @Inject
+    //    @Inject
 //    ApiBbc apiBbc;
     //    Retrofit retrofit;
     @BindView(R.id.recycler_view)
