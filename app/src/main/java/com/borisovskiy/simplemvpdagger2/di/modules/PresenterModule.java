@@ -15,7 +15,7 @@ public class PresenterModule {
 
     @FragmentScope
     @Provides
-    public static IPresenter getPresenter(MyFragment fragment, Model model, ApiBbc apiBbc) {
-        return new Presenter(fragment, model, apiBbc);
+    public static IPresenter getPresenter(MyFragment fragment, Model model) {
+        return new Presenter(fragment, model);
     }
 }

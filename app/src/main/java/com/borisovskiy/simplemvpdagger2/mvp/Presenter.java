@@ -15,17 +15,17 @@ public class Presenter implements Contract.IPresenter {
     private IView view;
     private IModel model;
 
-//    public Presenter(IView view, IModel model) {
-//        this.view = view;
-//        this.model = model;
-//    }
-
-
-    public Presenter(IView view, IModel model, ApiBbc apiBbc) {
+    public Presenter(IView view, IModel model) {
         this.view = view;
         this.model = model;
-        this.apiBbc = apiBbc;
     }
+
+
+//    public Presenter(IView view, IModel model, ApiBbc apiBbc) {
+//        this.view = view;
+//        this.model = model;
+//        this.apiBbc = apiBbc;
+//    }
 
     @Override
     public void onAttachUI() {

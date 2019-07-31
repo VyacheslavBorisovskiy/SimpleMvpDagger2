@@ -16,7 +16,7 @@ public class Model implements Contract.IModel {
     private String s = "mvp-dagger";
     private PojoNews pojoNews;
 
-    @Inject
+//    @Inject
     public Model(ApiBbc api) {
         this.api = api;
     }

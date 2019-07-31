@@ -1,4 +1,4 @@
-package com.borisovskiy.simplemvpdagger2.adapters;
+package com.borisovskiy.simplemvpdagger2.ui;
 
 
 import android.content.Context;

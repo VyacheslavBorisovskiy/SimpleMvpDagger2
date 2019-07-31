@@ -16,6 +16,6 @@ public interface AppModule {
     MainActivity contributesMainActivityInjector();
 
     @FragmentScope
-    @ContributesAndroidInjector(modules = {PresenterModule.class})
+    @ContributesAndroidInjector(modules = {PresenterModule.class, ModelModule.class})
     MyFragment contributesPresenterInjector();
 }
