@@ -4,6 +4,7 @@ import com.borisovskiy.simplemvpdagger2.di.scopes.FragmentScope;
 import com.borisovskiy.simplemvpdagger2.mvp.Contract.IPresenter;
 import com.borisovskiy.simplemvpdagger2.mvp.Model;
 import com.borisovskiy.simplemvpdagger2.mvp.Presenter;
+import com.borisovskiy.simplemvpdagger2.retrofit.ApiBbc;
 import com.borisovskiy.simplemvpdagger2.ui.MyFragment;
 
 import dagger.Module;
@@ -14,7 +15,7 @@ public class PresenterModule {
 
     @FragmentScope
     @Provides
-    public static IPresenter getPresenter(MyFragment fragment, Model model) {
-        return new Presenter(fragment, model);
+    public static IPresenter getPresenter(MyFragment fragment, Model model, ApiBbc apiBbc) {
+        return new Presenter(fragment, model, apiBbc);
     }
 }

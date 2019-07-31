@@ -7,12 +7,14 @@ public interface Contract {
     interface IPresenter{
         void onAttachUI();
         void onDetachUI();
-        PojoNews getPojoNews();
+//        PojoNews getPojoNews();
+        void loadData();
     }
 
     interface IView{
         void setData(String string);
         void setData(PojoNews pojoNews);
+        void handleError(Throwable t);
     }
 
     interface IModel{

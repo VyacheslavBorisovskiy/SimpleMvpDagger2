@@ -11,13 +11,14 @@ import retrofit2.Response;
 
 public class Model implements Contract.IModel {
 
-    @Inject
+//    @Inject
     ApiBbc api;
     private String s = "mvp-dagger";
     private PojoNews pojoNews;
 
     @Inject
-    public Model() {
+    public Model(ApiBbc api) {
+        this.api = api;
     }
 
     @Override

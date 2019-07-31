@@ -30,11 +30,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MyFragment extends BaseFragment implements Contract.IView {
-    @Inject
-    ApiBbc apiBbc;
+//    @Inject
+//    ApiBbc apiBbc;
     //    Retrofit retrofit;
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
+
     RecyclerViewAdapter recyclerViewAdapter;
     @BindView(R.id.textview)
     TextView textView;
@@ -71,19 +72,20 @@ public class MyFragment extends BaseFragment implements Contract.IView {
 //        apiBbc = retrofit.create(ApiBbc.class);
 
 
-        apiBbc.getBbcData("bbc-news", "1ab09308782244538982ed1870f37d82").enqueue(new Callback<PojoNews>() {
-            @Override
-            public void onResponse(Call<PojoNews> call, Response<PojoNews> response) {
-                handleResults(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<PojoNews> call, Throwable t) {
-                handleError(t);
-            }
-        });
+//        apiBbc.getBbcData("bbc-news", "1ab09308782244538982ed1870f37d82").enqueue(new Callback<PojoNews>() {
+//            @Override
+//            public void onResponse(Call<PojoNews> call, Response<PojoNews> response) {
+//                handleResults(response.body());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<PojoNews> call, Throwable t) {
+//                handleError(t);
+//            }
+//        });
 
 //        handleResults(presenter.getPojoNews());
+        presenter.loadData();
 
         return view;
     }
@@ -98,6 +100,7 @@ public class MyFragment extends BaseFragment implements Contract.IView {
         }
     }
 
+    @Override
     public void handleError(Throwable t) {
         System.out.println(t + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }

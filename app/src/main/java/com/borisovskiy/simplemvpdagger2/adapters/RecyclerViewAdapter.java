@@ -23,6 +23,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     Context context;
     private List<PojoArticle> posts;
 
+
     public RecyclerViewAdapter(Context context) {
         this.posts = new ArrayList<>();
         this.context = context;
