@@ -26,19 +26,20 @@ public class Model implements Contract.IModel {
         return s;
     }
 
-    public PojoNews getPojoNews() {
-        api.getBbcData("bbc-news", "1ab09308782244538982ed1870f37d82").enqueue(new Callback<PojoNews>() {
-            @Override
-            public void onResponse(Call<PojoNews> call, Response<PojoNews> response) {
-                pojoNews = response.body();
-                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!! " + pojoNews);
-            }
-
-            @Override
-            public void onFailure(Call<PojoNews> call, Throwable t) {
-
-            }
-        });
-        return pojoNews;
-    }
+//    @Override
+//    public PojoNews getPojoNews() {
+//        api.getBbcData("bbc-news", "1ab09308782244538982ed1870f37d82").enqueue(new Callback<PojoNews>() {
+//            @Override
+//            public void onResponse(Call<PojoNews> call, Response<PojoNews> response) {
+//                pojoNews = response.body();
+//                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!! " + pojoNews);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<PojoNews> call, Throwable t) {
+//
+//            }
+//        });
+//        return pojoNews;
+//    }
 }

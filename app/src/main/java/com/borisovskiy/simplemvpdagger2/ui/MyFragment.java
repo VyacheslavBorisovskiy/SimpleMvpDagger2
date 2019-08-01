@@ -104,6 +104,7 @@ public class MyFragment extends BaseFragment implements Contract.IView {
     public void onStart() {
         super.onStart();
         presenter.onAttachUI();
+//        presenter.loadData();
     }
 
     @Override

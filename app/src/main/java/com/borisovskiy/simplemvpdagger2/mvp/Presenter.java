@@ -11,7 +11,7 @@ import retrofit2.Response;
 
 public class Presenter implements Contract.IPresenter {
 
-    ApiBbc apiBbc;
+    private ApiBbc apiBbc;
     private IView view;
     private IModel model;
 

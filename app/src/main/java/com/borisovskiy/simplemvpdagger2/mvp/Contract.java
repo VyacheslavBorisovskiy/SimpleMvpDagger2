@@ -19,6 +19,6 @@ public interface Contract {
 
     interface IModel{
         String getData();
-        PojoNews getPojoNews();
+//        PojoNews getPojoNews();
     }
 }
