@@ -5,6 +5,8 @@ import com.borisovskiy.simplemvpdagger2.mvp.Contract.IView;
 import com.borisovskiy.simplemvpdagger2.retrofit.ApiBbc;
 import com.borisovskiy.simplemvpdagger2.retrofit.PojoNews;
 
+import javax.inject.Inject;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,7 +22,7 @@ public class Presenter implements Contract.IPresenter {
 //        this.model = model;
 //    }
 
-
+        @Inject
     public Presenter(IView view, IModel model, ApiBbc apiBbc) {
         this.view = view;
         this.model = model;

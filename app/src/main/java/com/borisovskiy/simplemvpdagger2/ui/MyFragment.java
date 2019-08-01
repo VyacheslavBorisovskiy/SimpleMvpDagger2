@@ -38,6 +38,7 @@ public class MyFragment extends BaseFragment implements Contract.IView {
     IPresenter presenter;
     private Unbinder unbinder;
 
+    @Inject
     public MyFragment() {
     }
 
